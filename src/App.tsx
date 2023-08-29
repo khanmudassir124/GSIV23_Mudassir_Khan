@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Provider } from "react-redux";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import "./App.css";
+import store from "./redux/store";
+import MovieList from "./screens/MovieList";
+import MovieDetail from "./screens/MovieDetail";
 
 function App() {
+  const routes = {
+    MovieList: "MovieList",
+    MovieDetail: "MovieDetail",
+  };
   return (
-    <div className="bg-white">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code className='text-red-600'>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path={routes.MovieList} element={<MovieList />}></Route>
+          <Route path={routes.MovieDetail} element={<MovieDetail />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
