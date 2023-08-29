@@ -6,17 +6,18 @@ import "./App.css";
 import store from "./redux/store";
 import MovieList from "./screens/MovieList";
 import MovieDetail from "./screens/MovieDetail";
+import MovieController from "./services/movieController";
 
 function App() {
   const routes = {
-    MovieList: "MovieList",
-    MovieDetail: "MovieDetail",
+    MovieList: "/",
+    MovieDetail: "/index",
   };
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter >
         <Routes>
-          <Route path={routes.MovieList} element={<MovieList />}></Route>
+          <Route  path={routes.MovieList} element={<MovieList />} index></Route>
           <Route path={routes.MovieDetail} element={<MovieDetail />}></Route>
         </Routes>
       </BrowserRouter>

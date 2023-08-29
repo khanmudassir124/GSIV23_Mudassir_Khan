@@ -1,10 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { MovieCollection } from "../../types/MovieCollection";
 
 export interface movieListState {
-  data: any;
+  data: MovieCollection;
 }
 const INITIAL_STATE = {
-  data: false,
+  data: {
+    page: 1,
+    results: [],
+    total_pages: 0,
+    total_results: 0,
+  },
 };
 
 export const movieListSlice = createSlice({
