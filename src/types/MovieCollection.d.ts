@@ -1,11 +1,11 @@
 export interface MovieCollection {
     page?:          number;
-    results?:       Result[];
+    results?:       MovieMeta[];
     total_pages?:   number;
     total_results?: number;
 }
 
-export interface Result {
+export interface MovieMeta {
     adult?:             boolean;
     backdrop_path?:     string;
     genre_ids?:         number[];

@@ -5,12 +5,10 @@ export interface movieListState {
   data: MovieCollection;
 }
 const INITIAL_STATE = {
-  data: {
     page: 1,
     results: [],
     total_pages: 0,
     total_results: 0,
-  },
 };
 
 export const movieListSlice = createSlice({
@@ -18,7 +16,7 @@ export const movieListSlice = createSlice({
   initialState: INITIAL_STATE,
   reducers: {
     setMoviesList: (state, action) => {
-      state.data = action?.payload;
+      return action?.payload;
     },
   },
 });

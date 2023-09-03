@@ -5,20 +5,22 @@ import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import store from "./redux/store";
 import MovieList from "./screens/MovieList";
-import MovieDetail from "./screens/MovieDetail";
-import MovieController from "./services/movieController";
+import MovieDetailScreen from "./screens/MovieDetailScreen";
 
 function App() {
   const routes = {
     MovieList: "/",
-    MovieDetail: "/index",
+    MovieDetail: "/:id",
   };
   return (
     <Provider store={store}>
-      <BrowserRouter >
+      <BrowserRouter>
         <Routes>
-          <Route  path={routes.MovieList} element={<MovieList />} index></Route>
-          <Route path={routes.MovieDetail} element={<MovieDetail />}></Route>
+          <Route path={routes.MovieList} element={<MovieList />} index></Route>
+          <Route
+            path={routes.MovieDetail}
+            element={<MovieDetailScreen />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </Provider>
