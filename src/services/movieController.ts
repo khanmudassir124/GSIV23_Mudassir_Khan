@@ -52,7 +52,7 @@ const getMovieDetails = (movieId: string) => {
 const getOMDBMovieDetails = (imdb_Id: string) => {
   return axios
     .get(
-      `http://www.omdbapi.com/?i=${imdb_Id}&apikey=${process.env.REACT_APP_OMDB_AUTH_TOKEN}
+      `https://www.omdbapi.com/?i=${imdb_Id}&apikey=${process.env.REACT_APP_OMDB_AUTH_TOKEN}
       `
     )
     .then((result) => result.data)
